@@ -33,6 +33,7 @@ class Genre(UUIDMixin, TimeStampedMixin):
         verbose_name = _('genre')
         verbose_name_plural = _('genres')
         ordering = ('name',)
+        managed = False
 
 
 class Person(UUIDMixin, TimeStampedMixin):
@@ -45,6 +46,7 @@ class Person(UUIDMixin, TimeStampedMixin):
         db_table = 'content"."person'
         verbose_name = _('person')
         verbose_name_plural = _('persons')
+        managed = False
 
 
 class FilmTypes(models.TextChoices):
@@ -91,6 +93,7 @@ class FilmWork(UUIDMixin, TimeStampedMixin):
                 name='film_work_creation_rating_idx',
             ),
         ]
+        managed = False
 
 
 class GenreFilmWork(UUIDMixin):
@@ -115,6 +118,7 @@ class GenreFilmWork(UUIDMixin):
                 name='film_work_genre_idx',
             ),
         ]
+        managed = False
 
 
 class Roles(models.TextChoices):
@@ -151,3 +155,4 @@ class PersonFilmWork(UUIDMixin):
                 name='film_work_person_role_idx',
             ),
         ]
+        managed = False

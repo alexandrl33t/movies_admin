@@ -1,5 +1,3 @@
-import logging
-
 from django.contrib.postgres.aggregates import ArrayAgg
 from django.db.models import Q
 from django.http import JsonResponse
@@ -38,6 +36,7 @@ class MoviesApiMixin:
             'writers': obj.writers,
             'directors': obj.directors,
         }
+
 
 class MoviesListApi(MoviesApiMixin, BaseListView):
     paginate_by = 50
